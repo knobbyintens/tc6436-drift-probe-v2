@@ -1,0 +1,24 @@
+{
+  "tool_id": "sable.quota_sampler",
+  "owner": "sable",
+  "tool_name": "quota_sampler",
+  "display_name": "Quota Sampler",
+  "summary": "Sample quota usage across tenants on a schedule.",
+  "build_path": "builds/sable/quota_sampler",
+  "parameters": {
+    "sample_window": {
+      "description": "Window in seconds.",
+      "type": "integer",
+      "default": 60
+    },
+    "precision": {
+      "description": "Decimal precision for reported values.",
+      "type": "number",
+      "default": 2
+    },
+    "tags": {
+      "description": "Extra tags for the sample.",
+      "type": "array, optional"
+    }
+  }
+}

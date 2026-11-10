@@ -1,0 +1,9 @@
+# Auto-generated implementation stub.
+# Tool: sable.repo_indexer
+from tool_runtime import entrypoint
+
+
+@entrypoint
+def run(ctx, **kwargs):
+    """Entry point for Repo Indexer."""
+    return ctx.success(data=kwargs)

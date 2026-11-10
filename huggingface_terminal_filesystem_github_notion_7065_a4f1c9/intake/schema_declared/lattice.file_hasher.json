@@ -1,0 +1,30 @@
+{
+  "tool_id": "lattice.file_hasher",
+  "owner": "lattice",
+  "tool_name": "file_hasher",
+  "display_name": "File Hasher",
+  "summary": "Compute content hashes for a directory tree.",
+  "build_path": "builds/lattice/file_hasher",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Root directory to hash."
+      },
+      "algo": {
+        "type": "string",
+        "description": "Hash algorithm.",
+        "default": "sha256"
+      },
+      "stream": {
+        "type": "boolean",
+        "description": "Stream large files instead of buffering.",
+        "default": true
+      }
+    },
+    "required": [
+      "path"
+    ]
+  }
+}

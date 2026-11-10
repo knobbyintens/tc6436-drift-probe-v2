@@ -1,0 +1,26 @@
+{
+  "tool_id": "quill.image_resizer",
+  "owner": "quill",
+  "tool_name": "image_resizer",
+  "display_name": "Image Resizer",
+  "summary": "Resize remote images for delivery profiles.",
+  "build_path": "builds/quill/image_resizer",
+  "parameters": {
+    "source_url": {
+      "description": "Image URL.",
+      "type": "string"
+    },
+    "width": {
+      "description": "Target width in pixels.",
+      "type": "integer"
+    },
+    "height": {
+      "description": "Target height in pixels.",
+      "type": "integer"
+    },
+    "fit": {
+      "description": "Resize fit strategy.",
+      "type": "string, optional"
+    }
+  }
+}

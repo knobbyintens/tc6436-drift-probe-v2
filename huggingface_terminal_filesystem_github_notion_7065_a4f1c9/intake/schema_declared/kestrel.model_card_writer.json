@@ -1,0 +1,31 @@
+{
+  "tool_id": "kestrel.model_card_writer",
+  "owner": "kestrel",
+  "tool_name": "model_card_writer",
+  "display_name": "Model Card Writer",
+  "summary": "Generate a model card from evaluation metadata.",
+  "build_path": "builds/kestrel/model_card_writer",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "model_id": {
+        "type": "string",
+        "description": "Model registry id."
+      },
+      "license": {
+        "type": "string",
+        "description": "License recorded on the card.",
+        "default": "apache-2.0"
+      },
+      "draft_count": {
+        "type": "integer",
+        "description": "Number of alternate drafts.",
+        "default": 1
+      }
+    },
+    "required": [
+      "model_id",
+      "license"
+    ]
+  }
+}

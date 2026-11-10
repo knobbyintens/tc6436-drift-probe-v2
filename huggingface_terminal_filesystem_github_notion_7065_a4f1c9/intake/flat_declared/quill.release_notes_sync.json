@@ -1,0 +1,20 @@
+{
+  "tool_id": "quill.release_notes_sync",
+  "owner": "quill",
+  "tool_name": "release_notes_sync",
+  "display_name": "Release Notes Sync",
+  "summary": "Sync release notes to a planning board.",
+  "build_path": "builds/quill/release_notes_sync",
+  "parameters": {
+    "board_id": {
+      "description": "Planning board identifier.",
+      "type": "string",
+      "default": null
+    },
+    "publish": {
+      "description": "Publish immediately after sync.",
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

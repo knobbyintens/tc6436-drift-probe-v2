@@ -1,0 +1,31 @@
+{
+  "tool_id": "kestrel.report_drafter",
+  "owner": "kestrel",
+  "tool_name": "report_drafter",
+  "display_name": "Report Drafter",
+  "summary": "Draft a structured business report from collected findings.",
+  "build_path": "builds/kestrel/report_drafter",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "topic": {
+        "type": "string",
+        "description": "Primary subject of the report."
+      },
+      "tone": {
+        "type": "string",
+        "description": "Writing tone used for the draft.",
+        "default": "neutral"
+      },
+      "word_limit": {
+        "type": "integer",
+        "description": "Maximum number of words in the draft.",
+        "default": 800
+      }
+    },
+    "required": [
+      "topic",
+      "tone"
+    ]
+  }
+}

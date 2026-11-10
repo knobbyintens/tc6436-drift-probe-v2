@@ -1,0 +1,27 @@
+{
+  "tool_id": "sable.vector_ingestor",
+  "owner": "sable",
+  "tool_name": "vector_ingestor",
+  "display_name": "Vector Ingestor",
+  "summary": "Embed and upsert documents into a vector collection.",
+  "build_path": "builds/sable/vector_ingestor",
+  "parameters": {
+    "collection": {
+      "description": "Vector collection name.",
+      "type": "string"
+    },
+    "batch_size": {
+      "description": "Documents per batch.",
+      "type": "integer",
+      "default": 128
+    },
+    "metric": {
+      "description": "Distance metric.",
+      "type": "string, optional"
+    },
+    "source": {
+      "description": "Source document set.",
+      "type": "string"
+    }
+  }
+}

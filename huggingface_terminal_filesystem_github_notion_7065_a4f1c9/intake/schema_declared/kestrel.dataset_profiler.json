@@ -1,0 +1,37 @@
+{
+  "tool_id": "kestrel.dataset_profiler",
+  "owner": "kestrel",
+  "tool_name": "dataset_profiler",
+  "display_name": "Dataset Profiler",
+  "summary": "Summarise column types and null rates for a tabular dataset.",
+  "build_path": "builds/kestrel/dataset_profiler",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "dataset": {
+        "type": "string",
+        "description": "Dataset identifier."
+      },
+      "columns": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Columns to profile when supplied."
+      },
+      "sample_size": {
+        "type": "integer",
+        "description": "Row sample used for profiling.",
+        "default": 100
+      },
+      "strict": {
+        "type": "boolean",
+        "description": "Fail on unsupported column types.",
+        "default": false
+      }
+    },
+    "required": [
+      "dataset"
+    ]
+  }
+}

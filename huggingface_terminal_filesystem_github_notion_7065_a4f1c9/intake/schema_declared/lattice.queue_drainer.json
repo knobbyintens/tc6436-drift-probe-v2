@@ -1,0 +1,32 @@
+{
+  "tool_id": "lattice.queue_drainer",
+  "owner": "lattice",
+  "tool_name": "queue_drainer",
+  "display_name": "Queue Drainer",
+  "summary": "Drain and replay messages from a work queue.",
+  "build_path": "builds/lattice/queue_drainer",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "queue": {
+        "type": "string",
+        "description": "Queue name."
+      },
+      "batch_size": {
+        "type": "integer",
+        "description": "Messages per batch.",
+        "default": 50
+      },
+      "timeout_s": {
+        "type": "integer",
+        "description": "Per-batch timeout in seconds.",
+        "default": 30
+      }
+    },
+    "required": [
+      "queue",
+      "batch_size",
+      "timeout_s"
+    ]
+  }
+}

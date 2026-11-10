@@ -1,0 +1,32 @@
+{
+  "tool_id": "lattice.contract_extractor",
+  "owner": "lattice",
+  "tool_name": "contract_extractor",
+  "display_name": "Contract Extractor",
+  "summary": "Extract clauses and obligations from a contract document.",
+  "build_path": "builds/lattice/contract_extractor",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "doc_url": {
+        "type": "string",
+        "description": "Contract document URL."
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Sections to extract."
+      },
+      "confidence": {
+        "type": "number",
+        "description": "Minimum extraction confidence.",
+        "default": 0.7
+      }
+    },
+    "required": [
+      "doc_url"
+    ]
+  }
+}

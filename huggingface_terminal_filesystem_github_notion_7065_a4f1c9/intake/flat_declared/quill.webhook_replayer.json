@@ -1,0 +1,27 @@
+{
+  "tool_id": "quill.webhook_replayer",
+  "owner": "quill",
+  "tool_name": "webhook_replayer",
+  "display_name": "Webhook Replayer",
+  "summary": "Replay a recorded webhook delivery.",
+  "build_path": "builds/quill/webhook_replayer",
+  "parameters": {
+    "event_id": {
+      "description": "Recorded event identifier.",
+      "type": "string"
+    },
+    "target_url": {
+      "description": "Destination URL.",
+      "type": "string"
+    },
+    "headers": {
+      "description": "Additional request headers.",
+      "type": "object",
+      "default": null
+    },
+    "signature": {
+      "description": "Request signature.",
+      "type": "String, Optional"
+    }
+  }
+}

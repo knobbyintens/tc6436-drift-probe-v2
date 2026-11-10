@@ -1,0 +1,27 @@
+{
+  "tool_id": "quill.manifest_linter",
+  "owner": "quill",
+  "tool_name": "manifest_linter",
+  "display_name": "Manifest Linter",
+  "summary": "Validate package manifests against registry rules.",
+  "build_path": "builds/quill/manifest_linter",
+  "parameters": {
+    "manifest_path": {
+      "description": "Manifest file to lint.",
+      "type": "string"
+    },
+    "strict": {
+      "description": "Treat warnings as errors.",
+      "type": "boolean",
+      "default": false
+    },
+    "ruleset": {
+      "description": "Ruleset name.",
+      "type": "string, optional"
+    },
+    "note": {
+      "description": "Optional rule overrides supplied by the caller.",
+      "type": "string"
+    }
+  }
+}

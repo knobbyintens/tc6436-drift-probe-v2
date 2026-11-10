@@ -1,0 +1,27 @@
+{
+  "tool_id": "sable.repo_indexer",
+  "owner": "sable",
+  "tool_name": "repo_indexer",
+  "display_name": "Repo Indexer",
+  "summary": "Index source files from a repository for retrieval.",
+  "build_path": "builds/sable/repo_indexer",
+  "parameters": {
+    "repo": {
+      "description": "Repository slug.",
+      "type": "string"
+    },
+    "branch": {
+      "description": "Branch to index.",
+      "type": "string",
+      "default": "main"
+    },
+    "depth": {
+      "description": "Directory traversal depth.",
+      "type": "integer, optional"
+    },
+    "mode": {
+      "description": "Optional sweep mode override for very large repositories.",
+      "type": "string"
+    }
+  }
+}

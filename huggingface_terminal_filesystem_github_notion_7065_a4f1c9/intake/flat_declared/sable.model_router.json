@@ -1,0 +1,22 @@
+{
+  "tool_id": "sable.model_router",
+  "owner": "sable",
+  "tool_name": "model_router",
+  "display_name": "Model Router",
+  "summary": "Route inference requests across registered models.",
+  "build_path": "builds/sable/model_router",
+  "parameters": {
+    "route": {
+      "description": "Routing rule name.",
+      "type": "string"
+    },
+    "model_id": {
+      "description": "Primary model identifier.",
+      "type": "string"
+    },
+    "fallback": {
+      "description": "Fallback model identifier.",
+      "type": "string"
+    }
+  }
+}

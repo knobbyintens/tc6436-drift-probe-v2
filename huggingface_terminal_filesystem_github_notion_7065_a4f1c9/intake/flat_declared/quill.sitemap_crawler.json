@@ -1,0 +1,28 @@
+{
+  "tool_id": "quill.sitemap_crawler",
+  "owner": "quill",
+  "tool_name": "sitemap_crawler",
+  "display_name": "Sitemap Crawler",
+  "summary": "Crawl a sitemap and queue pages for indexing.",
+  "build_path": "builds/quill/sitemap_crawler",
+  "parameters": {
+    "domain": {
+      "description": "Domain to crawl.",
+      "type": "string"
+    },
+    "max_pages": {
+      "description": "Maximum pages to enqueue.",
+      "type": "integer",
+      "default": 500
+    },
+    "respect_robots": {
+      "description": "Honour robots.txt.",
+      "type": "boolean",
+      "default": true
+    },
+    "sitemap": {
+      "description": "Optional sitemap URL override.",
+      "type": "string"
+    }
+  }
+}

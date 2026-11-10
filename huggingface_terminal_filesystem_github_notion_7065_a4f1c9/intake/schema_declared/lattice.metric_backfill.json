@@ -1,0 +1,28 @@
+{
+  "tool_id": "lattice.metric_backfill",
+  "owner": "lattice",
+  "tool_name": "metric_backfill",
+  "display_name": "Metric Backfill",
+  "summary": "Recompute historical metrics from raw events.",
+  "build_path": "builds/lattice/metric_backfill",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "metric": {
+        "type": "string",
+        "description": "Metric key to backfill."
+      },
+      "start": {
+        "type": "string",
+        "description": "First date to recompute.",
+        "default": "2026-01-01"
+      },
+      "dry_run": {
+        "type": "boolean",
+        "description": "Preview changes without writing.",
+        "default": true
+      }
+    },
+    "required": []
+  }
+}

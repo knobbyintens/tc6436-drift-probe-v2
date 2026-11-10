@@ -1,0 +1,30 @@
+{
+  "tool_id": "kestrel.slack_notifier",
+  "owner": "kestrel",
+  "tool_name": "slack_notifier",
+  "display_name": "Slack Notifier",
+  "summary": "Send templated notifications into a workspace channel.",
+  "build_path": "builds/kestrel/slack_notifier",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "channel": {
+        "type": "string",
+        "description": "Target channel name."
+      },
+      "message_template": {
+        "type": "string",
+        "description": "Template rendered with run variables."
+      },
+      "escalate": {
+        "type": "boolean",
+        "description": "Also notify the on-call rotation.",
+        "default": true
+      }
+    },
+    "required": [
+      "channel",
+      "message_template"
+    ]
+  }
+}

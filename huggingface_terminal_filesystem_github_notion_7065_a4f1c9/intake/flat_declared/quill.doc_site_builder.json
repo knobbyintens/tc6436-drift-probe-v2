@@ -1,0 +1,25 @@
+{
+  "tool_id": "quill.doc_site_builder",
+  "owner": "quill",
+  "tool_name": "doc_site_builder",
+  "display_name": "Doc Site Builder",
+  "summary": "Render a documentation site from markdown sources.",
+  "build_path": "builds/quill/doc_site_builder",
+  "parameters": {
+    "theme": {
+      "description": "Site theme.",
+      "type": "string",
+      "default": "default"
+    },
+    "port": {
+      "description": "Preview port.",
+      "type": "integer",
+      "default": 8080
+    },
+    "verbose": {
+      "description": "Verbose build logging.",
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

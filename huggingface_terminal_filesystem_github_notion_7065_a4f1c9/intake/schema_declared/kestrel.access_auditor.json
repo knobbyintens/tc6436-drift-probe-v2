@@ -1,0 +1,23 @@
+{
+  "tool_id": "kestrel.access_auditor",
+  "owner": "kestrel",
+  "tool_name": "access_auditor",
+  "display_name": "Access Auditor",
+  "summary": "Inspect role bindings for stale or over-broad grants.",
+  "build_path": "builds/kestrel/access_auditor",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "scope": {
+        "type": "string",
+        "description": "Namespace to audit."
+      },
+      "include_service_accounts": {
+        "type": "boolean",
+        "description": "Include machine identities in the report.",
+        "default": true
+      }
+    },
+    "required": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "tool_id": "lattice.prompt_evaluator",
+  "owner": "lattice",
+  "tool_name": "prompt_evaluator",
+  "display_name": "Prompt Evaluator",
+  "summary": "Score a prompt suite against a registered model.",
+  "build_path": "builds/lattice/prompt_evaluator",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "suite": {
+        "type": "string",
+        "description": "Prompt suite identifier."
+      },
+      "model": {
+        "type": "string",
+        "description": "Model to evaluate."
+      },
+      "samples": {
+        "type": "integer",
+        "description": "Samples per prompt.",
+        "default": 32
+      }
+    },
+    "required": [
+      "suite",
+      "model",
+      "samples"
+    ]
+  }
+}

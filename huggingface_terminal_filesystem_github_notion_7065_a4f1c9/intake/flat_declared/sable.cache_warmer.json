@@ -1,0 +1,24 @@
+{
+  "tool_id": "sable.cache_warmer",
+  "owner": "sable",
+  "tool_name": "cache_warmer",
+  "display_name": "Cache Warmer",
+  "summary": "Pre-populate edge caches for popular assets.",
+  "build_path": "builds/sable/cache_warmer",
+  "parameters": {
+    "region": {
+      "description": "Target region.",
+      "type": "string",
+      "default": "global"
+    },
+    "concurrency": {
+      "description": "Parallel requests.",
+      "type": "integer",
+      "default": 8
+    },
+    "ttl_minutes": {
+      "description": "Cache TTL in minutes.",
+      "type": "integer, optional"
+    }
+  }
+}

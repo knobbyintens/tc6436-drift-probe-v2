@@ -1,0 +1,26 @@
+{
+  "tool_id": "lattice.alert_router",
+  "owner": "lattice",
+  "tool_name": "alert_router",
+  "display_name": "Alert Router",
+  "summary": "Route monitoring alerts to the owning team.",
+  "build_path": "builds/lattice/alert_router",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "routing_key": {
+        "type": "string",
+        "description": "Alert routing key."
+      },
+      "severity": {
+        "type": "string",
+        "description": "Minimum severity to forward.",
+        "default": "warning"
+      },
+      "webhook": {
+        "type": "string",
+        "description": "Destination webhook."
+      }
+    }
+  }
+}

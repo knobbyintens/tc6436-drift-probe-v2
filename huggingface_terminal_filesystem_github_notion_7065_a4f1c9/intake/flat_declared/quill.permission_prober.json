@@ -1,0 +1,22 @@
+{
+  "tool_id": "quill.permission_prober",
+  "owner": "quill",
+  "tool_name": "permission_prober",
+  "display_name": "Permission Prober",
+  "summary": "Probe effective permissions for a role and endpoint.",
+  "build_path": "builds/quill/permission_prober",
+  "parameters": {
+    "endpoint": {
+      "description": "API endpoint to probe.",
+      "type": "string"
+    },
+    "role": {
+      "description": "Role name to assume.",
+      "type": "string"
+    },
+    "depth": {
+      "description": "Dependency traversal depth.",
+      "type": "integer"
+    }
+  }
+}

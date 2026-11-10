@@ -1,0 +1,28 @@
+{
+  "tool_id": "sable.snapshot_pruner",
+  "owner": "sable",
+  "tool_name": "snapshot_pruner",
+  "display_name": "Snapshot Pruner",
+  "summary": "Retain only the newest snapshots in a bucket.",
+  "build_path": "builds/sable/snapshot_pruner",
+  "parameters": {
+    "bucket": {
+      "description": "Bucket holding the snapshots.",
+      "type": "string"
+    },
+    "keep_last": {
+      "description": "Snapshots to retain.",
+      "type": "integer",
+      "default": 10
+    },
+    "dry_run": {
+      "description": "Report deletions without applying.",
+      "type": "boolean",
+      "default": true
+    },
+    "force": {
+      "description": "Override retention policy.",
+      "type": "Boolean, Optional"
+    }
+  }
+}

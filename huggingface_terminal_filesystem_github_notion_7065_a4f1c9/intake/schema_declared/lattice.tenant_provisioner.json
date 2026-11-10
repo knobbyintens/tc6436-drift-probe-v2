@@ -1,0 +1,23 @@
+{
+  "tool_id": "lattice.tenant_provisioner",
+  "owner": "lattice",
+  "tool_name": "tenant_provisioner",
+  "display_name": "Tenant Provisioner",
+  "summary": "Provision a new tenant with default resources.",
+  "build_path": "builds/lattice/tenant_provisioner",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "tenant": {
+        "type": "string",
+        "description": "Tenant slug."
+      },
+      "region": {
+        "type": "string",
+        "description": "Primary deployment region.",
+        "default": "us-east-1"
+      }
+    },
+    "required": []
+  }
+}

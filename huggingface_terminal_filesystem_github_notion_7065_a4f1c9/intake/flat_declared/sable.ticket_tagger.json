@@ -1,0 +1,28 @@
+{
+  "tool_id": "sable.ticket_tagger",
+  "owner": "sable",
+  "tool_name": "ticket_tagger",
+  "display_name": "Ticket Tagger",
+  "summary": "Apply classification labels to an inbound ticket.",
+  "build_path": "builds/sable/ticket_tagger",
+  "parameters": {
+    "ticket_id": {
+      "description": "Ticket identifier.",
+      "type": "string"
+    },
+    "labels": {
+      "description": "Labels to apply.",
+      "type": "array",
+      "default": null
+    },
+    "priority": {
+      "description": "Priority bucket.",
+      "type": "string",
+      "default": "P3"
+    },
+    "note": {
+      "description": "Optional annotation text attached to the ticket.",
+      "type": "string"
+    }
+  }
+}

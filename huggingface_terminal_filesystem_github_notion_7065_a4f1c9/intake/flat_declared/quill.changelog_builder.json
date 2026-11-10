@@ -1,0 +1,22 @@
+{
+  "tool_id": "quill.changelog_builder",
+  "owner": "quill",
+  "tool_name": "changelog_builder",
+  "display_name": "Changelog Builder",
+  "summary": "Build a changelog from commits between two tags.",
+  "build_path": "builds/quill/changelog_builder",
+  "parameters": {
+    "since_tag": {
+      "description": "Starting git tag.",
+      "type": "string"
+    },
+    "target": {
+      "description": "Target git ref.",
+      "type": "string"
+    },
+    "output": {
+      "description": "Output file path.",
+      "type": "string"
+    }
+  }
+}

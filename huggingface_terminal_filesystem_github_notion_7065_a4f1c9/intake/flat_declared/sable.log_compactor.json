@@ -1,0 +1,22 @@
+{
+  "tool_id": "sable.log_compactor",
+  "owner": "sable",
+  "tool_name": "log_compactor",
+  "display_name": "Log Compactor",
+  "summary": "Compact append-only log segments into archives.",
+  "build_path": "builds/sable/log_compactor",
+  "parameters": {
+    "stream": {
+      "description": "Log stream name.",
+      "type": "string"
+    },
+    "window_hours": {
+      "description": "Compaction window in hours.",
+      "type": "integer"
+    },
+    "archive_bucket": {
+      "description": "Destination archive bucket.",
+      "type": "string"
+    }
+  }
+}

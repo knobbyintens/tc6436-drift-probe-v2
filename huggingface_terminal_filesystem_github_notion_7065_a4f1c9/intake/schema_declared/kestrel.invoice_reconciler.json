@@ -1,0 +1,27 @@
+{
+  "tool_id": "kestrel.invoice_reconciler",
+  "owner": "kestrel",
+  "tool_name": "invoice_reconciler",
+  "display_name": "Invoice Reconciler",
+  "summary": "Match ledger entries against submitted invoices.",
+  "build_path": "builds/kestrel/invoice_reconciler",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ledger_id": {
+        "type": "string",
+        "description": "Ledger to reconcile."
+      },
+      "period": {
+        "type": "string",
+        "description": "Accounting period label.",
+        "default": "current"
+      },
+      "tolerance": {
+        "type": "number",
+        "description": "Absolute amount tolerance.",
+        "default": 0.01
+      }
+    }
+  }
+}

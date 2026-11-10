@@ -1,0 +1,30 @@
+{
+  "tool_id": "lattice.schema_migrator",
+  "owner": "lattice",
+  "tool_name": "schema_migrator",
+  "display_name": "Schema Migrator",
+  "summary": "Apply a versioned schema migration to a database.",
+  "build_path": "builds/lattice/schema_migrator",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "migration": {
+        "type": "string",
+        "description": "Migration identifier."
+      },
+      "target_version": {
+        "type": "string",
+        "description": "Target schema version."
+      },
+      "allow_destructive": {
+        "type": "boolean",
+        "description": "Permit destructive statements.",
+        "default": false
+      }
+    },
+    "required": [
+      "migration",
+      "allow_destructive"
+    ]
+  }
+}

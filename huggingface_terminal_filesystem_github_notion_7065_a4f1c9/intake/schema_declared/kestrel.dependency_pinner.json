@@ -1,0 +1,27 @@
+{
+  "tool_id": "kestrel.dependency_pinner",
+  "owner": "kestrel",
+  "tool_name": "dependency_pinner",
+  "display_name": "Dependency Pinner",
+  "summary": "Pin transitive dependency versions from a manifest.",
+  "build_path": "builds/kestrel/dependency_pinner",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "manifest_path": {
+        "type": "string",
+        "description": "Manifest to pin."
+      },
+      "lockfile": {
+        "type": "string",
+        "description": "Lockfile name to write.",
+        "default": "requirements.lock"
+      },
+      "upgrade": {
+        "type": "boolean",
+        "description": "Allow newer compatible versions.",
+        "default": false
+      }
+    }
+  }
+}
