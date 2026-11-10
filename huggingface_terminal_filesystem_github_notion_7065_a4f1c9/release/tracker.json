@@ -73,10 +73,8 @@
     },
     {
       "tool_id": "lattice.schema_migrator",
-      "status": "incomplete",
-      "missing_artifacts": [
-        "handler/main.py"
-      ]
+      "status": "verified",
+      "missing_artifacts": []
     },
     {
       "tool_id": "lattice.tenant_provisioner",
@@ -100,11 +98,8 @@
     },
     {
       "tool_id": "quill.manifest_linter",
-      "status": "incomplete",
-      "missing_artifacts": [
-        "handler/main.py",
-        "docs/spec.md"
-      ]
+      "status": "verified",
+      "missing_artifacts": []
     },
     {
       "tool_id": "quill.permission_prober",
@@ -128,10 +123,8 @@
     },
     {
       "tool_id": "sable.cache_warmer",
-      "status": "incomplete",
-      "missing_artifacts": [
-        "docs/spec.md"
-      ]
+      "status": "verified",
+      "missing_artifacts": []
     },
     {
       "tool_id": "sable.log_compactor",
