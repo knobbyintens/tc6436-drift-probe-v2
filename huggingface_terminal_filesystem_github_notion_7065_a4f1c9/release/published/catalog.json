@@ -1,0 +1,769 @@
+{
+  "registry_version": "2026.11",
+  "tools": [
+    {
+      "tool_id": "kestrel.access_auditor",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "string",
+            "description": "Namespace to audit."
+          },
+          "include_service_accounts": {
+            "type": "boolean",
+            "description": "Include machine identities in the report.",
+            "default": true
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "tool_id": "kestrel.dataset_profiler",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "description": "Dataset identifier."
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Columns to profile when supplied."
+          },
+          "sample_size": {
+            "type": "integer",
+            "description": "Row sample used for profiling.",
+            "default": 100
+          },
+          "strict": {
+            "type": "boolean",
+            "description": "Fail on unsupported column types.",
+            "default": false
+          }
+        },
+        "required": [
+          "dataset"
+        ]
+      }
+    },
+    {
+      "tool_id": "kestrel.dependency_pinner",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "manifest_path": {
+            "type": "string",
+            "description": "Manifest to pin."
+          },
+          "lockfile": {
+            "type": "string",
+            "description": "Lockfile name to write.",
+            "default": "requirements.lock"
+          },
+          "upgrade": {
+            "type": "boolean",
+            "description": "Allow newer compatible versions.",
+            "default": false
+          }
+        }
+      }
+    },
+    {
+      "tool_id": "kestrel.invoice_reconciler",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "ledger_id": {
+            "type": "string",
+            "description": "Ledger to reconcile."
+          },
+          "period": {
+            "type": "string",
+            "description": "Accounting period label.",
+            "default": "current"
+          },
+          "tolerance": {
+            "type": "number",
+            "description": "Absolute amount tolerance.",
+            "default": 0.01
+          }
+        }
+      }
+    },
+    {
+      "tool_id": "kestrel.model_card_writer",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "model_id": {
+            "type": "string",
+            "description": "Model registry id."
+          },
+          "license": {
+            "type": "string",
+            "description": "License recorded on the card.",
+            "default": "apache-2.0"
+          },
+          "draft_count": {
+            "type": "integer",
+            "description": "Number of alternate drafts.",
+            "default": 1
+          }
+        },
+        "required": [
+          "model_id",
+          "license"
+        ]
+      }
+    },
+    {
+      "tool_id": "kestrel.report_drafter",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string",
+            "description": "Primary subject of the report."
+          },
+          "tone": {
+            "type": "string",
+            "description": "Writing tone used for the draft.",
+            "default": "neutral"
+          },
+          "word_limit": {
+            "type": "integer",
+            "description": "Maximum number of words in the draft.",
+            "default": 800
+          }
+        },
+        "required": [
+          "topic",
+          "tone"
+        ]
+      }
+    },
+    {
+      "tool_id": "kestrel.secret_rotator",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "string",
+            "description": "Secret namespace."
+          },
+          "ttl_hours": {
+            "type": "integer",
+            "description": "Lifetime of rotated secrets.",
+            "default": 24
+          },
+          "dry_run": {
+            "type": "boolean",
+            "description": "Plan rotations without applying them.",
+            "default": true
+          }
+        },
+        "required": [
+          "scope",
+          "ttl_hours"
+        ]
+      }
+    },
+    {
+      "tool_id": "kestrel.slack_notifier",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string",
+            "description": "Target channel name."
+          },
+          "message_template": {
+            "type": "string",
+            "description": "Template rendered with run variables."
+          },
+          "escalate": {
+            "type": "boolean",
+            "description": "Also notify the on-call rotation.",
+            "default": true
+          }
+        },
+        "required": [
+          "channel",
+          "message_template"
+        ]
+      }
+    },
+    {
+      "tool_id": "lattice.alert_router",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "routing_key": {
+            "type": "string",
+            "description": "Alert routing key."
+          },
+          "severity": {
+            "type": "string",
+            "description": "Minimum severity to forward.",
+            "default": "warning"
+          },
+          "webhook": {
+            "type": "string",
+            "description": "Destination webhook."
+          }
+        }
+      }
+    },
+    {
+      "tool_id": "lattice.contract_extractor",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "doc_url": {
+            "type": "string",
+            "description": "Contract document URL."
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Sections to extract."
+          },
+          "confidence": {
+            "type": "number",
+            "description": "Minimum extraction confidence.",
+            "default": 0.7
+          }
+        },
+        "required": [
+          "doc_url"
+        ]
+      }
+    },
+    {
+      "tool_id": "lattice.file_hasher",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Root directory to hash."
+          },
+          "algo": {
+            "type": "string",
+            "description": "Hash algorithm.",
+            "default": "sha256"
+          },
+          "stream": {
+            "type": "boolean",
+            "description": "Stream large files instead of buffering.",
+            "default": true
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    {
+      "tool_id": "lattice.metric_backfill",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string",
+            "description": "Metric key to backfill."
+          },
+          "start": {
+            "type": "string",
+            "description": "First date to recompute.",
+            "default": "2026-01-01"
+          },
+          "dry_run": {
+            "type": "boolean",
+            "description": "Preview changes without writing.",
+            "default": true
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "tool_id": "lattice.prompt_evaluator",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "suite": {
+            "type": "string",
+            "description": "Prompt suite identifier."
+          },
+          "model": {
+            "type": "string",
+            "description": "Model to evaluate."
+          },
+          "samples": {
+            "type": "integer",
+            "description": "Samples per prompt.",
+            "default": 32
+          }
+        },
+        "required": [
+          "suite",
+          "model",
+          "samples"
+        ]
+      }
+    },
+    {
+      "tool_id": "lattice.queue_drainer",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "queue": {
+            "type": "string",
+            "description": "Queue name."
+          },
+          "batch_size": {
+            "type": "integer",
+            "description": "Messages per batch.",
+            "default": 50
+          },
+          "timeout_s": {
+            "type": "integer",
+            "description": "Per-batch timeout in seconds.",
+            "default": 30
+          }
+        },
+        "required": [
+          "queue",
+          "batch_size",
+          "timeout_s"
+        ]
+      }
+    },
+    {
+      "tool_id": "lattice.tenant_provisioner",
+      "family": "schema",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "tenant": {
+            "type": "string",
+            "description": "Tenant slug."
+          },
+          "region": {
+            "type": "string",
+            "description": "Primary deployment region.",
+            "default": "us-east-1"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "tool_id": "quill.changelog_builder",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "since_tag": {
+            "description": "Starting git tag.",
+            "type": "string"
+          },
+          "target": {
+            "description": "Target git ref.",
+            "type": "string"
+          },
+          "output": {
+            "description": "Output file path.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "since_tag",
+          "target",
+          "output"
+        ]
+      }
+    },
+    {
+      "tool_id": "quill.doc_site_builder",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "theme": {
+            "description": "Site theme.",
+            "type": "string",
+            "default": "default"
+          },
+          "port": {
+            "description": "Preview port.",
+            "type": "integer",
+            "default": 8080
+          },
+          "verbose": {
+            "description": "Verbose build logging.",
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "tool_id": "quill.image_resizer",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "source_url": {
+            "description": "Image URL.",
+            "type": "string"
+          },
+          "width": {
+            "description": "Target width in pixels.",
+            "type": "integer"
+          },
+          "height": {
+            "description": "Target height in pixels.",
+            "type": "integer"
+          },
+          "fit": {
+            "description": "Resize fit strategy.",
+            "type": "string, optional"
+          }
+        },
+        "required": [
+          "source_url",
+          "width",
+          "height"
+        ]
+      }
+    },
+    {
+      "tool_id": "quill.permission_prober",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "endpoint": {
+            "description": "API endpoint to probe.",
+            "type": "string"
+          },
+          "role": {
+            "description": "Role name to assume.",
+            "type": "string"
+          },
+          "depth": {
+            "description": "Dependency traversal depth.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "endpoint",
+          "role",
+          "depth"
+        ]
+      }
+    },
+    {
+      "tool_id": "quill.release_notes_sync",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "board_id": {
+            "description": "Planning board identifier.",
+            "type": "string",
+            "default": null
+          },
+          "publish": {
+            "description": "Publish immediately after sync.",
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "tool_id": "quill.sitemap_crawler",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "description": "Domain to crawl.",
+            "type": "string"
+          },
+          "max_pages": {
+            "description": "Maximum pages to enqueue.",
+            "type": "integer",
+            "default": 500
+          },
+          "respect_robots": {
+            "description": "Honour robots.txt.",
+            "type": "boolean",
+            "default": true
+          },
+          "sitemap": {
+            "description": "Optional sitemap URL override.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "domain",
+          "sitemap"
+        ]
+      }
+    },
+    {
+      "tool_id": "quill.webhook_replayer",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "description": "Recorded event identifier.",
+            "type": "string"
+          },
+          "target_url": {
+            "description": "Destination URL.",
+            "type": "string"
+          },
+          "headers": {
+            "description": "Additional request headers.",
+            "type": "object",
+            "default": null
+          },
+          "signature": {
+            "description": "Request signature.",
+            "type": "String, Optional"
+          }
+        },
+        "required": [
+          "event_id",
+          "target_url"
+        ]
+      }
+    },
+    {
+      "tool_id": "sable.log_compactor",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "stream": {
+            "description": "Log stream name.",
+            "type": "string"
+          },
+          "window_hours": {
+            "description": "Compaction window in hours.",
+            "type": "integer"
+          },
+          "archive_bucket": {
+            "description": "Destination archive bucket.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "stream",
+          "window_hours",
+          "archive_bucket"
+        ]
+      }
+    },
+    {
+      "tool_id": "sable.model_router",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "route": {
+            "description": "Routing rule name.",
+            "type": "string"
+          },
+          "model_id": {
+            "description": "Primary model identifier.",
+            "type": "string"
+          },
+          "fallback": {
+            "description": "Fallback model identifier.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "route",
+          "model_id",
+          "fallback"
+        ]
+      }
+    },
+    {
+      "tool_id": "sable.quota_sampler",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "sample_window": {
+            "description": "Window in seconds.",
+            "type": "integer",
+            "default": 60
+          },
+          "precision": {
+            "description": "Decimal precision for reported values.",
+            "type": "number",
+            "default": 2
+          },
+          "tags": {
+            "description": "Extra tags for the sample.",
+            "type": "array, optional"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "tool_id": "sable.repo_indexer",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "repo": {
+            "description": "Repository slug.",
+            "type": "string"
+          },
+          "branch": {
+            "description": "Branch to index.",
+            "type": "string",
+            "default": "main"
+          },
+          "depth": {
+            "description": "Directory traversal depth.",
+            "type": "integer, optional"
+          },
+          "mode": {
+            "description": "Optional sweep mode override for very large repositories.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "repo",
+          "mode"
+        ]
+      }
+    },
+    {
+      "tool_id": "sable.snapshot_pruner",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "bucket": {
+            "description": "Bucket holding the snapshots.",
+            "type": "string"
+          },
+          "keep_last": {
+            "description": "Snapshots to retain.",
+            "type": "integer",
+            "default": 10
+          },
+          "dry_run": {
+            "description": "Report deletions without applying.",
+            "type": "boolean",
+            "default": true
+          },
+          "force": {
+            "description": "Override retention policy.",
+            "type": "Boolean, Optional"
+          }
+        },
+        "required": [
+          "bucket"
+        ]
+      }
+    },
+    {
+      "tool_id": "sable.ticket_tagger",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "ticket_id": {
+            "description": "Ticket identifier.",
+            "type": "string"
+          },
+          "labels": {
+            "description": "Labels to apply.",
+            "type": "array",
+            "default": null
+          },
+          "priority": {
+            "description": "Priority bucket.",
+            "type": "string",
+            "default": "P3"
+          },
+          "note": {
+            "description": "Optional annotation text attached to the ticket.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "note"
+        ]
+      }
+    },
+    {
+      "tool_id": "sable.vector_ingestor",
+      "family": "flat",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "description": "Vector collection name.",
+            "type": "string"
+          },
+          "batch_size": {
+            "description": "Documents per batch.",
+            "type": "integer",
+            "default": 128
+          },
+          "metric": {
+            "description": "Distance metric.",
+            "type": "string, optional"
+          },
+          "source": {
+            "description": "Source document set.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "source"
+        ]
+      }
+    }
+  ]
+}
