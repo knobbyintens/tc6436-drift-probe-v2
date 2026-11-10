@@ -17,9 +17,7 @@
             "default": true
           }
         },
-        "required": [
-          "scope"
-        ]
+        "required": []
       }
     },
     {
@@ -51,8 +49,7 @@
           }
         },
         "required": [
-          "dataset",
-          "columns"
+          "dataset"
         ]
       }
     },
@@ -76,10 +73,7 @@
             "description": "Allow newer compatible versions.",
             "default": false
           }
-        },
-        "required": [
-          "manifest_path"
-        ]
+        }
       }
     },
     {
@@ -102,10 +96,7 @@
             "description": "Absolute amount tolerance.",
             "default": 0.01
           }
-        },
-        "required": [
-          "ledger_id"
-        ]
+        }
       }
     },
     {
@@ -130,7 +121,8 @@
           }
         },
         "required": [
-          "model_id"
+          "model_id",
+          "license"
         ]
       }
     },
@@ -156,7 +148,8 @@
           }
         },
         "required": [
-          "topic"
+          "topic",
+          "tone"
         ]
       }
     },
@@ -182,7 +175,8 @@
           }
         },
         "required": [
-          "scope"
+          "scope",
+          "ttl_hours"
         ]
       }
     },
@@ -231,11 +225,7 @@
             "type": "string",
             "description": "Destination webhook."
           }
-        },
-        "required": [
-          "routing_key",
-          "webhook"
-        ]
+        }
       }
     },
     {
@@ -262,8 +252,7 @@
           }
         },
         "required": [
-          "doc_url",
-          "sections"
+          "doc_url"
         ]
       }
     },
@@ -314,9 +303,7 @@
             "default": true
           }
         },
-        "required": [
-          "metric"
-        ]
+        "required": []
       }
     },
     {
@@ -341,7 +328,8 @@
         },
         "required": [
           "suite",
-          "model"
+          "model",
+          "samples"
         ]
       }
     },
@@ -367,7 +355,9 @@
           }
         },
         "required": [
-          "queue"
+          "queue",
+          "batch_size",
+          "timeout_s"
         ]
       }
     },
@@ -393,7 +383,7 @@
         },
         "required": [
           "migration",
-          "target_version"
+          "allow_destructive"
         ]
       }
     },
@@ -413,9 +403,7 @@
             "default": "us-east-1"
           }
         },
-        "required": [
-          "tenant"
-        ]
+        "required": []
       }
     },
     {
@@ -524,7 +512,8 @@
           }
         },
         "required": [
-          "manifest_path"
+          "manifest_path",
+          "note"
         ]
       }
     },
@@ -600,7 +589,8 @@
           }
         },
         "required": [
-          "domain"
+          "domain",
+          "sitemap"
         ]
       }
     },
@@ -759,7 +749,8 @@
           }
         },
         "required": [
-          "repo"
+          "repo",
+          "mode"
         ]
       }
     },
@@ -819,7 +810,8 @@
           }
         },
         "required": [
-          "ticket_id"
+          "ticket_id",
+          "note"
         ]
       }
     },

@@ -17,9 +17,7 @@
             "default": true
           }
         },
-        "required": [
-          "scope"
-        ]
+        "required": []
       }
     },
     {
@@ -51,8 +49,7 @@
           }
         },
         "required": [
-          "dataset",
-          "columns"
+          "dataset"
         ]
       }
     },
@@ -76,10 +73,7 @@
             "description": "Allow newer compatible versions.",
             "default": false
           }
-        },
-        "required": [
-          "manifest_path"
-        ]
+        }
       }
     },
     {
@@ -102,10 +96,7 @@
             "description": "Absolute amount tolerance.",
             "default": 0.01
           }
-        },
-        "required": [
-          "ledger_id"
-        ]
+        }
       }
     },
     {
@@ -130,7 +121,8 @@
           }
         },
         "required": [
-          "model_id"
+          "model_id",
+          "license"
         ]
       }
     },
@@ -156,7 +148,8 @@
           }
         },
         "required": [
-          "topic"
+          "topic",
+          "tone"
         ]
       }
     },
@@ -182,7 +175,8 @@
           }
         },
         "required": [
-          "scope"
+          "scope",
+          "ttl_hours"
         ]
       }
     },
@@ -231,11 +225,7 @@
             "type": "string",
             "description": "Destination webhook."
           }
-        },
-        "required": [
-          "routing_key",
-          "webhook"
-        ]
+        }
       }
     },
     {
@@ -262,8 +252,7 @@
           }
         },
         "required": [
-          "doc_url",
-          "sections"
+          "doc_url"
         ]
       }
     },
@@ -314,9 +303,7 @@
             "default": true
           }
         },
-        "required": [
-          "metric"
-        ]
+        "required": []
       }
     },
     {
@@ -341,7 +328,8 @@
         },
         "required": [
           "suite",
-          "model"
+          "model",
+          "samples"
         ]
       }
     },
@@ -367,33 +355,9 @@
           }
         },
         "required": [
-          "queue"
-        ]
-      }
-    },
-    {
-      "tool_id": "lattice.schema_migrator",
-      "family": "schema",
-      "parameters": {
-        "type": "object",
-        "properties": {
-          "migration": {
-            "type": "string",
-            "description": "Migration identifier."
-          },
-          "target_version": {
-            "type": "string",
-            "description": "Target schema version."
-          },
-          "allow_destructive": {
-            "type": "boolean",
-            "description": "Permit destructive statements.",
-            "default": false
-          }
-        },
-        "required": [
-          "migration",
-          "target_version"
+          "queue",
+          "batch_size",
+          "timeout_s"
         ]
       }
     },
@@ -413,9 +377,7 @@
             "default": "us-east-1"
           }
         },
-        "required": [
-          "tenant"
-        ]
+        "required": []
       }
     },
     {
@@ -500,35 +462,6 @@
       }
     },
     {
-      "tool_id": "quill.manifest_linter",
-      "family": "flat",
-      "parameters": {
-        "type": "object",
-        "properties": {
-          "manifest_path": {
-            "description": "Manifest file to lint.",
-            "type": "string"
-          },
-          "strict": {
-            "description": "Treat warnings as errors.",
-            "type": "boolean",
-            "default": false
-          },
-          "ruleset": {
-            "description": "Ruleset name.",
-            "type": "string, optional"
-          },
-          "note": {
-            "description": "Optional rule overrides supplied by the caller.",
-            "type": "string"
-          }
-        },
-        "required": [
-          "manifest_path"
-        ]
-      }
-    },
-    {
       "tool_id": "quill.permission_prober",
       "family": "flat",
       "parameters": {
@@ -600,7 +533,8 @@
           }
         },
         "required": [
-          "domain"
+          "domain",
+          "sitemap"
         ]
       }
     },
@@ -632,30 +566,6 @@
           "event_id",
           "target_url"
         ]
-      }
-    },
-    {
-      "tool_id": "sable.cache_warmer",
-      "family": "flat",
-      "parameters": {
-        "type": "object",
-        "properties": {
-          "region": {
-            "description": "Target region.",
-            "type": "string",
-            "default": "global"
-          },
-          "concurrency": {
-            "description": "Parallel requests.",
-            "type": "integer",
-            "default": 8
-          },
-          "ttl_minutes": {
-            "description": "Cache TTL in minutes.",
-            "type": "integer, optional"
-          }
-        },
-        "required": []
       }
     },
     {
@@ -759,7 +669,8 @@
           }
         },
         "required": [
-          "repo"
+          "repo",
+          "mode"
         ]
       }
     },
@@ -819,7 +730,8 @@
           }
         },
         "required": [
-          "ticket_id"
+          "ticket_id",
+          "note"
         ]
       }
     },
